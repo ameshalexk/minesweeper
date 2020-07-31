@@ -11,13 +11,15 @@ html, body {
 
   }
 
-  canvas {
+  div {
     border: 1px solid green;
+    width: 320px;
+    height: 643px;
   }
 
   .box {
     display: inline-block;
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
   }
