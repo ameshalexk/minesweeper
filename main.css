@@ -15,6 +15,7 @@ html, body {
     border: 1px solid green;
     width: 320px;
     height: 643px;
+    background-color: gray;
   }
 
   .box {

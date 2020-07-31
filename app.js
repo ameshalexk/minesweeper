@@ -32,10 +32,12 @@ $(() => {
   const sweepMine= (event) => {
     if (arr.includes(parseInt(event.currentTarget.id,10))) {
       console.log('dead')
-      console.log(event.currentTarget.id);
+      console.log(event.currentTarget);
+      $(event.currentTarget).css('background-color', 'red')
     } else {
       console.log('alive');
       console.log(event.currentTarget.id);
+      $(event.currentTarget).css('background-color', 'green')
     }
   }
 
