@@ -8,15 +8,35 @@ $(() => {
       let $box = $('<div>')
       $box.addClass('box')
       $box.attr('id', i)
+      $box.text(i)
+
       $field.append($box)
-      
+
 
     }
 
   }
-  const sweepMine= (event) => {
+  
+  const arr = [];
 
-    console.log(event.currentTarget.id);
+  //create function to make mines.
+  const mines = (num) => {
+    for (let i=0; i<=num; i++) {
+      arr.push(Math.floor(Math.random() * 180))
+    }
+  }
+  mines(10);
+  console.log(arr);
+
+  //Clicking on field to detect mines.
+  const sweepMine= (event) => {
+    if (arr.includes(parseInt(event.currentTarget.id,10))) {
+      console.log('dead')
+      console.log(event.currentTarget.id);
+    } else {
+      console.log('alive');
+      console.log(event.currentTarget.id);
+    }
   }
 
   mineBoard();
