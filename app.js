@@ -71,22 +71,44 @@ $(() => {
         // console.log($pos.top, 'postop');
 
 
-        if ($pos.top === val.top) {
-          console.log(val.top, 'valtop');
-          console.log($pos.top, 'postop');
-
-          if ($pos.left - val.left === 32)
-          // console.log($pos.top, val.top);
-          console.log('lol');
-
-          if ($pos.top - val.top === 32)
-          // console.log($pos.top, val.top);
-          console.log('lol2');
+        // if ($pos.top === val.top) {
+        //   console.log(val.top, 'valtop');
+        //   console.log($pos.top, 'postop');
 
 
-
+        if ( val.top - $pos.top  === 32 && $pos.left === val.left ) {
+          console.log('north');
         }
 
+        if ($pos.left - val.left === 32 && $pos.top === val.top )
+          // console.log($pos.top, val.top);
+          console.log('east');
+
+          if ($pos.top - val.top === 32 && $pos.left === val.left ) {
+            console.log('south');
+          }
+
+          if ( val.left - $pos.left  === 32 && $pos.top === val.top )
+          // console.log($pos.top, val.top);
+          console.log('west');
+
+          if ( val.top - $pos.top  === 32 && $pos.left - val.left === 32) {
+            console.log('northeast');
+          }
+
+          if ($pos.top - val.top === 32 && $pos.left - val.left === 32 ) {
+            console.log('southeast');
+          }
+
+          if ($pos.top - val.top === 32 && val.left - $pos.left=== 32 ) {
+            console.log('southwest');
+          }
+
+          if ( val.top - $pos.top   === 32 &&  val.left - $pos.left === 32) {
+            console.log('northwest');
+          }
+
+         
         
 
 
