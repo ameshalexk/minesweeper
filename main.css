@@ -12,9 +12,9 @@ html, body {
   }
 
   div {
-    border: 1px solid green;
+    border: 1px solid black;
     width: 320px;
-    height: 643px;
+    height: 343px;
     background-color: gray;
   }
 
