@@ -129,23 +129,8 @@ $(() => {
         $numb.text(`:(${box.length}):`)
 
         
-        const fact = (num) => {
-            
-            if (num >=  80) {
-                console.log(num);
-                
-                if (val.left === num) {
-                    console.log('s');
-                }
 
 
-                return fact(num-32);;
-            }
-             
-
-        }
-
-      fact($pos.left);
 
 
 
