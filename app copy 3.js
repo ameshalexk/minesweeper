@@ -20,27 +20,26 @@ $(() => {
     for (let i=0; i<num; i++) {
       // let $newMine = $('<div>')
       // $newMine.css('background-color', 'black')
-    //   let rand = Math.floor(Math.random() * 99)
-    //   const random = [];
-    //   while(random.length < 10){
-        //       if(random.indexOf(rand) === -1) random.push(rand);
-        //   }
-        //   console.log(random);
-        
-     let rand = Math.floor(Math.random() * 99);
-
+      let rand = Math.floor(Math.random() * 99)
       // console.log(rand);
       // $newMine.attr('id', rand);
       $(`#${rand}`).css('background-color', 'black')
       $(`#${rand}`).css('color', 'white') 
       let $minePos = $(`#${rand}`).position(); 
       // console.log($minePos);
-      if(arry.indexOf(rand) === -1) arry.push($minePos);
-    
-      
+     
+      arry.push($minePos)
       // console.log(arr);
         
-  
+      const unique = (value, index, self) => {
+        return self.indexOf(value) === index
+      }
+      
+      
+      const uniqueAges = arry.filter(unique)
+      
+      console.log(uniqueAges)
+      
 
     }
 
@@ -69,12 +68,11 @@ $(() => {
       //Tracking position of current selection
       const $pos = $(event.currentTarget).position();
       const $test = $('#8').position();
-      const $numb = $(event.currentTarget)
 
       // console.log($test);
       // console.log('sd');
 
-      const box = []
+      
 
       $.each(arry , function(index, val) { 
         
@@ -89,63 +87,42 @@ $(() => {
 
         if ( val.top - $pos.top  === 32 && $pos.left === val.left ) {
           console.log('north');
-          let boxy = 'north'; 
-          if(box.indexOf(boxy) === -1) box.push(boxy);
-
         }
 
         if ($pos.left - val.left === 32 && $pos.top === val.top ) {
           // console.log($pos.top, val.top);
           console.log('east');
-          let boxy = 'east'; 
-          if(box.indexOf(boxy) === -1) box.push(boxy);
         }
 
           if ($pos.top - val.top === 32 && $pos.left === val.left ) {
             console.log('south');
-            let boxy = 'south'; 
-          if(box.indexOf(boxy) === -1) box.push(boxy);
           }
 
           if ( val.left - $pos.left  === 32 && $pos.top === val.top ) {
           // console.log($pos.top, val.top);
           console.log('west');
-          let boxy = 'west'; 
-          if(box.indexOf(boxy) === -1) box.push(boxy);
           }
 
           if ( val.top - $pos.top  === 32 && $pos.left - val.left === 32) {
             console.log('northeast');
-            let boxy = 'northeast'; 
-          if(box.indexOf(boxy) === -1) box.push(boxy);
-
           }
 
           if ($pos.top - val.top === 32 && $pos.left - val.left === 32 ) {
             console.log('southeast');
-            let boxy = 'southeast'; 
-          if(box.indexOf(boxy) === -1) box.push(boxy);
           }
 
           if ($pos.top - val.top === 32 && val.left - $pos.left=== 32 ) {
             console.log('southwest');
-            let boxy = 'southwest'; 
-          if(box.indexOf(boxy) === -1) box.push(boxy);
           }
 
           if ( val.top - $pos.top   === 32 &&  val.left - $pos.left === 32) {
             console.log('northwest');
-            let boxy = 'northwest'; 
-          if(box.indexOf(boxy) === -1) box.push(boxy);
           }
 
-          console.log(box);
-          $numb.text(box.length)
 
 
-      }
-      
-      );
+
+      });
 
       
     }
