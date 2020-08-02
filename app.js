@@ -9,7 +9,9 @@ $(() => {
       $box.addClass('box')
       $box.attr('id', i)
       $field.append($box)
-      $box.text(i)
+      $($box).css('background-color', 'black')
+      $($box).css('color', 'white') 
+      $box.text('**********')
     }
   }
   
@@ -31,8 +33,8 @@ $(() => {
 
       // console.log(rand);
       // $newMine.attr('id', rand);
-      $(`#${rand}`).css('background-color', 'black')
-      $(`#${rand}`).css('color', 'white') 
+      $(`#${rand}`).css('background-color', 'red')
+    //   $(`#${rand}`).css('color', 'white') 
       let $minePos = $(`#${rand}`).position(); 
       // console.log($minePos);
       if(arry.indexOf(rand) === -1) arry.push($minePos);
@@ -62,6 +64,8 @@ $(() => {
       console.log('dead')
       console.log(numb);
       $(numb).css('background-color', 'red')
+      alert("Oops!! You clicked on a mine!");
+
     } else {
       console.log('alive');
       console.log(numb.id);
@@ -78,6 +82,13 @@ $(() => {
 
       $.each(arry , function(index, val) { 
         
+
+        if ( val.top === $pos.top  &&  val.left === $pos.left ) {
+            console.log('Mine!!!');
+            alert("Oops!! You clicked on a mine!");
+            location.reload(true);
+
+          }
         // console.log(val.top, 'valtop');
         // console.log($pos.top, 'postop');
 
@@ -139,8 +150,12 @@ $(() => {
           if(box.indexOf(boxy) === -1) box.push(boxy);
           }
 
+          
+
+          
+
           console.log(box);
-          $numb.text(box.length)
+          $numb.text(`:(${box.length}):`)
 
 
       }
