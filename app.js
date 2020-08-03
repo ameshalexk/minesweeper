@@ -12,12 +12,17 @@ $(() => {
       $box.addClass('box')
       $box.attr('id', i)
       $field.append($box)
-      $($box).css('background-image', '#676061')
+      // $($box).css('background-image', '#676061')
       // $($box).css('background-image', 'url(./pixel.jpeg)');
 
 
       $($box).css('color', 'white') 
-      $box.html('^_^')
+      $($box).css('text-align', 'center') 
+      $($box).html('🟩') 
+
+      $('.imga').css('width', '20px') 
+      $('.imga').css('height', '20px') 
+
     }
   }
   
@@ -27,7 +32,7 @@ $(() => {
   const mines = (num) => {
     for (let i=0; i<num; i++) {
      let rand = Math.floor(Math.random() * 99);
-      $(`#${rand}`).css('background-color', 'red')
+      // $(`#${rand}`).css('background-color', 'red')
       let $minePos = $(`#${rand}`).position(); 
       if(arry.indexOf(rand) === -1) arry.push($minePos);
 
@@ -38,7 +43,9 @@ $(() => {
   console.log(arry);
 
   //Clicking on field to detect mines.
+
   const sweepMine= (event) => {
+    mines(10);
   const $pos = $(event.currentTarget).position();
 
 
@@ -129,8 +136,10 @@ $(() => {
           location.reload(true);
 
         }
-        $numb.html(`:(${box.length}):`)
-        // $numb.css('background-image', 'url(./pixel.jpeg)');
+        $numb.text(`${box.length}`)
+        // $numb.css('text-align', 'center') 
+        // $numb.html('🟦');
+        // $numb.css('color', 'white');
 
 
         
@@ -165,10 +174,20 @@ $(() => {
   }
 }
   mineBoard();
-  mines(10);
+  
   //creating on clicker on field
   $('.box').on('click', sweepMine);
 
+  const flag = (event) => {
+    const $rclick = $(event.currentTarget);
+    if (event.button ==2) {
+      $rclick.html('🚩')
+    }
+
+  }
+
+
+  $('.box').on('mousedown', flag);
 
 
 

@@ -30,6 +30,7 @@ html, body {
     cursor: pointer;
     border: 1px solid white;
     /* background-image: url(./pixel.jpeg) ; */
+    vertical-align: top;
   }
 
 
