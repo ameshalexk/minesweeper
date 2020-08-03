@@ -28,25 +28,23 @@ $(() => {
   
   const arry = [];
 
-  // create function to make mines.
-  const mines = (num) => {
-    for (let i=0; i<num; i++) {
-     let rand = Math.floor(Math.random() * 99);
-      $(`#${rand}`).css('background-color', 'red')
-      let $minePos = $(`#${rand}`).position(); 
-      if(arry.indexOf(rand) === -1) arry.push($minePos);
+  //create function to make mines.
+  // const mines = (num) => {
+  //   for (let i=0; i<num; i++) {
+  //    let rand = Math.floor(Math.random() * 99);
+  //     $(`#${rand}`).css('background-color', 'red')
+  //     let $minePos = $(`#${rand}`).position(); 
+  //     if(arry.indexOf(rand) === -1) arry.push($minePos);
 
-    }
+  //   }
     
-  }
+  // }
   
   console.log(arry);
 
   //Clicking on field to detect mines.
 
   const sweepMine= (event) => {
-
-
   const $pos = $(event.currentTarget).position();
 
 
@@ -175,9 +173,8 @@ $(() => {
   }
 }
   mineBoard();
-  mines(10);
+  // mines(10);
   //creating on clicker on field
-  
   $('.box').on('click', sweepMine);
 
   const flag = (event) => {
