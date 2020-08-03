@@ -24,8 +24,11 @@ $(() => {
       $('.imga').css('width', '20px') 
       $('.imga').css('height', '20x') 
 
+      $('#game').css('position', 'absolute');
+      $('#game').css('left', 'auto');
+      $('#game').css('top', '370px');
       
-
+      
     }
   }
   
@@ -242,6 +245,23 @@ $(() => {
     $closeBtn.on('click', closeModal); // on click, trigger the closeModal function
     
     // setTimeout(openModal, 5000); // trigger the openModal function automatically after a few seconds
+
+
+
+    $('body').css('animation-name', 'changer');
+    $('body').css('animation-duration', '2s');
+    $('body').css('animation-iteration-count', '1'); 
+    
+    
+    
+
+
+
+
+
+
+
+
 
 
 

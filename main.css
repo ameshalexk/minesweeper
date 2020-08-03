@@ -4,16 +4,38 @@ html, body {
   }
 
   body {
-    background: black;
+    background: #ff8883;
+    background-image: url(./mine.gif);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    position: relative;
+    /* animation-name: changer;
+    animation-duration: 2s;
+    animation-iteration-count: 1; */
   }
+
+  @keyframes changer{
+    0% { transform: scale(0.05) rotate(100deg)}
+    10% { transform: scale(0.1) rotate(200deg)}
+    25% { transform: scale(0.2)rotate(300deg)}
+    30% {transform: scale(0.3)rotate(400deg)}
+    40% {transform: scale(0.4)rotate(500deg)}
+    50% {transform: scale(0.5) rotate(600deg)}
+    60% { transform: scale(0.6)rotate(700deg)}
+    75% { transform: scale(0.7)rotate(800deg)}
+    80% {transform: scale(0.8)rotate(900deg)}
+    90% {transform: scale(0.9) rotate(1000deg)}
+    100% { transform: rotate(1100deg)}
+  }
+
   h1 {
     font-size: 50px;
     color: #2c2e7d;
+    position: absolute;
+    left: auto;
+    top: 100px;
     
   }
   div {
@@ -83,5 +105,9 @@ html, body {
     color: white;
     font-family: 'Arial';
     cursor: pointer;
+    position: absolute;
+    top: 700px;
     
   }
+
+ 
