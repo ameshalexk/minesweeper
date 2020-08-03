@@ -1,6 +1,5 @@
 let counter = [];
 
-
 $(() => {
 
   //render a field of boxes 
@@ -12,9 +11,9 @@ $(() => {
       $box.addClass('box')
       $box.attr('id', i)
       $field.append($box)
-      $($box).css('background-color', '#676061')
+      $($box).css('background-color', 'black')
       $($box).css('color', 'white') 
-      $box.html(':)')
+      $box.text(' ')
     }
   }
   
@@ -37,14 +36,15 @@ $(() => {
   //Clicking on field to detect mines.
   const sweepMine= (event) => {
   const $pos = $(event.currentTarget).position();
-
+  const $po = $(event.currentTarget);
+  
 
   const numb = event.currentTarget;
   if(counter.indexOf(numb.id) === -1) {
       
     counter.push(numb.id);
   
-  console.log(counter);
+//   console.log(counter);
     if (counter.length ===90) {
         console.log("WON");
         alert("Yayy!! You you wont Minesweeper!");
@@ -122,33 +122,33 @@ $(() => {
 
         if ( val.top === $pos.top  &&  val.left === $pos.left ) {
           console.log('Mine!!!');
-          alert("Oops!! You clicked on a mine!");
-          location.reload(true);
+        //   alert("Oops!! You clicked on a mine!");
+        //   location.reload(true);
 
         }
         $numb.text(`${box.length}`)
 
-        
-    //     const fact = (num) => {
+        const fact = (topy,lefty, po) => {
             
-    //         if (num >=  80) {
-    //             console.log(num);
+            if (topy >=  80 && lefty >=0 ) {
+                // console.log(num);
                 
-    //             if (val.left === num) {
-    //                 console.log('s');
-                    
-    //             }
+                if (val.top === topy && val.left === lefty) {
+                    $po.css('color', 'purple')
+                    console.log('s');
+                    return fact(topy-32, lefty-32);
+                }
+                
 
 
-    //             return fact(num-32);
-    //         }
-             
+                // return fact(topy-32, lefty-32);
+            }
 
-    //     }
+        }
+        
+      fact($pos.top, $pos.left, $po);
 
-    //   fact($pos.left);
-
-
+        
 
 
 
@@ -157,7 +157,11 @@ $(() => {
     );
     // sweepMine() 
 
-  }
+  } 
+//    if (counter.indexOf(numb.id) ===0) {
+//     return console.log('1')
+//   }
+
 }
   mineBoard();
   mines(10);
