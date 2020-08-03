@@ -11,6 +11,7 @@ html, body {
     align-items: center;
     justify-content: center;
     position: relative;
+    background-position: center center;
     /* animation-name: changer;
     animation-duration: 2s;
     animation-iteration-count: 1; */
