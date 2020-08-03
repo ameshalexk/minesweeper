@@ -169,5 +169,31 @@ $(() => {
   //creating on clicker on field
   $('.box').on('click', sweepMine);
 
+
+
+
+
+    //Grabbing Elements
+    const $openBtn = $('#openModal'); // grab the HTML element with the ID 'openModal' and save it to a jquery variable
+    const $modal = $('#modal'); // grab the HTML element with the ID 'modal' and save it to a jquery variable
+    const $closeBtn = $('#close'); // grab the HTML element with the ID 'close' and save it to a jquery variable
+    
+    //Event Handlers
+    const openModal = () => {
+      $modal.css('display', 'block'); // add the css property display: block to the HTML element we stored in the $modal variable
+    }
+    
+    const closeModal = () => {
+      $modal.css('display', 'none'); // add the css property display: none to the HTML element we stored in the $modal variable
+    }
+    
+    //Event Listeners
+    $openBtn.on('click', openModal); // on click, trigger the openModal function
+    $closeBtn.on('click', closeModal); // on click, trigger the closeModal function
+    
+    // setTimeout(openModal, 5000); // trigger the openModal function automatically after a few seconds
+
+
+
 })
 
