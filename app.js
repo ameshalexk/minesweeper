@@ -12,9 +12,12 @@ $(() => {
       $box.addClass('box')
       $box.attr('id', i)
       $field.append($box)
-      $($box).css('background-color', '#676061')
+      $($box).css('background-image', '#676061')
+      // $($box).css('background-image', 'url(./pixel.jpeg)');
+
+
       $($box).css('color', 'white') 
-      $box.html(':)')
+      $box.html('^_^')
     }
   }
   
@@ -126,7 +129,9 @@ $(() => {
           location.reload(true);
 
         }
-        $numb.text(`${box.length}`)
+        $numb.html(`:(${box.length}):`)
+        // $numb.css('background-image', 'url(./pixel.jpeg)');
+
 
         
     //     const fact = (num) => {
