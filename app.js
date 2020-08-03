@@ -24,9 +24,9 @@ $(() => {
       $('.imga').css('width', '20px') 
       $('.imga').css('height', '20x') 
 
-      $('#game').css('position', 'absolute');
+      $('#game').css('position', 'relative');
       $('#game').css('left', 'auto');
-      $('#game').css('top', '370px');
+      $('#game').css('top', 'auto');
       
       
     }

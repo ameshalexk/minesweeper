@@ -10,8 +10,11 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
+    /* position: relative; */
     background-position: center center;
+    /* background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
     /* animation-name: changer;
     animation-duration: 2s;
     animation-iteration-count: 1; */
@@ -36,7 +39,7 @@ html, body {
     color: #2c2e7d;
     position: absolute;
     left: auto;
-    top: 100px;
+    top: 10px;
     
   }
   div {
