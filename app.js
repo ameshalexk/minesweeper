@@ -19,9 +19,12 @@ $(() => {
       $($box).css('color', 'white') 
       $($box).css('text-align', 'center') 
       $($box).html('🟩') 
+      $($box).css('display', 'true') 
 
       $('.imga').css('width', '20px') 
       $('.imga').css('height', '20x') 
+
+      
 
     }
   }
@@ -133,11 +136,31 @@ $(() => {
 
         if ( val.top === $pos.top  &&  val.left === $pos.left ) {
           console.log('Mine!!!');
-          alert("Oops!! You clicked on a mine!");
-          location.reload(true);
+
+          $('#game').click(function () {
+            $(this).animate({
+                // width: '900px'
+            }, 'slow');
+        }, function () {
+            $(this).delay(200).animate({
+                width: 0
+            }, 'slow', function () { //callback function, which runs very next to .animate() https://stackoverflow.com/questions/4520307/how-to-delay-an-alert
+                alert('Oops!! You clicked on a mine!');
+                location.reload(true);
+
+            });
+        });
+
+
+
+
+
+          // alert("Oops!! You clicked on a mine!");
+          // location.reload(true);
 
         }
         $numb.text(`${box.length}`)
+        $numb.css('display', 'true') 
         // $numb.css('text-align', 'center') 
         // $numb.html('🟦');
         // $numb.css('color', 'white');
@@ -183,7 +206,13 @@ $(() => {
   const flag = (event) => {
     const $rclick = $(event.currentTarget);
     if (event.button ==2) {
-      $rclick.html('🚩')
+      // if ( display === true ) {
+        $rclick.html('🚩')
+      // } else if ( display === false ) {
+        // $( "#foo" ).hide();
+      // }
+      
+      
     }
 
   }
