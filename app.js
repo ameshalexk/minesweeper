@@ -5,6 +5,9 @@ let time = 1;
 const arry = [];
 let mineSet = new Set()
 let total = 0;
+let $newH1 = $('<div>')
+
+
 
   //render a field of boxes 
   const mineBoard =  () => {
@@ -47,15 +50,18 @@ let total = 0;
         counter.push(e.currentTarget.id);
         $(e.currentTarget).css('background-color', 'green')
 
-        console.log(e.currentTarget.id);
+        // console.log(e.currentTarget.id);
         return true
     }
   }
     const gameWon = (e) => {
-      if(counter.length + mineSet.size === 100) {
+      if(counter.length + mineSet.size === 100 || counter.length ===5) {
         alert(`Yayy!! You you wont Minesweeper! It took you ${time} seconds.`);
-        location.reload(true);
-        return true
+        // location.reload(true);
+        // player1 = new Player('amesh', time)
+        // console.log('lol');
+        mover(e, $newH1);
+        // return true
     }
   }
 
@@ -65,7 +71,7 @@ let total = 0;
   //Clicking on field to detect mines.
   const sweepMine= (event) => {
   const $pos = $(event.currentTarget).position();
-  console.log($pos);
+  // console.log($pos);
   if (isBoxRevealed(event)) {
     gameWon(event);
 
@@ -142,7 +148,7 @@ let total = 0;
 
   $('#game').one('click', function(e) {
     setInterval( () => {
-      console.log('sd');
+      // console.log('sd');
       $('#timer').html(time);
       time++
     }, 1000);
@@ -158,27 +164,111 @@ let total = 0;
 
   $('.box').on('mousedown', flag);
     //Grabbing Elements
-    const $openBtn = $('#openModal'); // grab the HTML element with the ID 'openModal' and save it to a jquery variable
-    const $modal = $('#modal'); // grab the HTML element with the ID 'modal' and save it to a jquery variable
-    const $closeBtn = $('#close'); // grab the HTML element with the ID 'close' and save it to a jquery variable
+    const $openBtn = $('#openModal'); 
+    const $openBtn2 = $('#openModal2'); 
+    
+
+    const $modal = $('#modal'); 
+    const $modal2 = $('#modal2'); 
+    const $closeBtn = $('#close'); 
+    const $closeBtn2 = $('#close2'); 
 
     //Event Handlers
     const openModal = () => {
-      $modal.css('display', 'block'); // add the css property display: block to the HTML element we stored in the $modal variable
+      $modal.css('display', 'block'); 
     }
     
     const closeModal = () => {
-      $modal.css('display', 'none'); // add the css property display: none to the HTML element we stored in the $modal variable
+      $modal.css('display', 'none'); 
+    }
+
+    const openModal2 = () => {
+      $modal2.css('display', 'block'); 
+    }
+
+    const closeModal2 = () => {
+      $modal2.css('display', 'none'); 
     }
     
+    
     //Event Listeners
-    $openBtn.on('click', openModal); // on click, trigger the openModal function
-    $closeBtn.on('click', closeModal); // on click, trigger the closeModal function
+    $openBtn.on('click', openModal); 
+    $openBtn2.on('click', openModal2); 
+
+    $closeBtn.on('click', closeModal); 
+    $closeBtn2.on('click', closeModal2); 
     
     // setTimeout(openModal, 5000); // trigger the openModal function automatically after a few seconds
     $('body').css('animation-name', 'changer');
     $('body').css('animation-duration', '2s');
     $('body').css('animation-iteration-count', '1'); 
+
+    // class Player {
+    //   constructor(name, timing) {
+    //     this.name = name;
+    //     this.timing = timing;
+    //   }
+    // }
+    
+    // console.log(player1.name);
+
+
+    //Grabbing Elements
+    const $openBtn1 = $('#openModal1'); 
+    const $modal1 = $('#modal1'); 
+    const $closeBtn1 = $('#close1'); 
+
+    //Event Handlers
+    const openModal1 = () => {
+      $modal1.css('display', 'block'); 
+    }
+    
+    const closeModal1 = () => {
+      $modal1.css('display', 'none'); 
+    }
+    
+    //Event Listeners
+    $openBtn1.on('click', openModal1); 
+    $closeBtn1.on('click', closeModal1); 
+    
+    setTimeout(openModal1, 3000); 
+
+    const createToDo = (event) => {
+      event.preventDefault();
+      let $inputValue = $('#input-box').val();
+      let $newDiv = $('<div>')
+      // let $newH1 = $('<div>')
+      let $toDoButton = $('<button>')
+      $newH1.text($inputValue)
+      $toDoButton.text('Completed')
+      
+      $('#to-do-list').append($newDiv)
+      $newDiv.append($newH1)
+      $newH1.addClass('to-do-item')
+      // $newH1.append($toDoButton)
+      $("#input-box").val("");
+      $("#modal1").css('display', 'none'); 
+      // $toDoButton.on('click', (event) => {
+      //   mover(event,$newH1);
+      // });
+ 
+ 
+    } 
+    // const deletes =(event, $del) => {
+    //   $del.remove();
+    // }
+    
+    const mover = (event, $move) => {
+      $move.removeClass("to-do-item");
+      $move.attr('class', 'done-item');
+      $("#completed").append($move);
+      console.log($move.text());
+      $move.html(`${$newH1.text()} took ${time} seconds.`)
+
+    }
+    $('#submit').on('click', createToDo);
+
+
 
 })
 
