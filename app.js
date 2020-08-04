@@ -1,3 +1,5 @@
+$(() => {
+  
 const counter = [];
 let time = 1;
 const arry = [];
@@ -58,7 +60,7 @@ let total = 0;
   }
 
 
-$(() => {
+
 
   //Clicking on field to detect mines.
   const sweepMine= (event) => {
