@@ -1,4 +1,5 @@
 let counter = [];
+let time = 0;
 
 
 $(() => {
@@ -51,7 +52,8 @@ $(() => {
   //Clicking on field to detect mines.
 
   const sweepMine= (event) => {
-
+   
+ 
 
   const $pos = $(event.currentTarget).position();
 
@@ -64,7 +66,7 @@ $(() => {
   console.log(counter);
     if (counter.length ===90) {
         console.log("WON");
-        alert("Yayy!! You you wont Minesweeper!");
+        alert(`Yayy!! You you wont Minesweeper! It took you ${time} seconds.`);
           location.reload(true);
 
     }
@@ -204,6 +206,19 @@ $(() => {
   mines(10);
   //creating on clicker on field
   
+
+  $('#game').one('click', function(e) {
+
+    setInterval( () => {
+      console.log('sd');
+      $('#timer').html(time);
+      time++
+    }, 1000);
+
+});
+
+
+
   $('.box').on('click', sweepMine);
 
   const flag = (event) => {
