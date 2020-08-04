@@ -165,7 +165,7 @@ $(() => {
 
         }
         $numb.text(`${box.length}`)
-        $numb.css('font-family','Orbitron') 
+        $numb.css('display', 'true') 
         // $numb.css('text-align', 'center') 
         // $numb.html('🟦');
         // $numb.css('color', 'white');
