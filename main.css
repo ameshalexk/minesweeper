@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
-
-
-
 html, body {
     height: 100%;
     margin: 0;
@@ -15,14 +12,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* position: relative; */
     background-position: center center;
-    /* background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; */
-    /* animation-name: changer;
-    animation-duration: 2s;
-    animation-iteration-count: 1; */
   }
 
   @keyframes changer{
@@ -43,18 +33,20 @@ html, body {
     font-size: 50px;
     color: #2c2e7d;
     position: absolute;
-    left: auto;
-    top: 10px;
+    top: 0;
     font-family: 'Orbitron', sans-serif;
 
-    
   }
   div {
-    /* border: 1px solid black; */
     width: 320px;
     height: 320px;
-    /* background-color: gray; */
   }
+  #game {
+    position: relative;
+    top: 100px;
+    left: 100px;
+ 
+   }
 
   .box {
     display: inline-block;
@@ -62,10 +54,8 @@ html, body {
     height: 30px;
     cursor: pointer;
     border: 1px solid white;
-    /* background-image: url(./pixel.jpeg) ; */
     vertical-align: top;
   }
-
 
   #modal {
     background-color: rgba(0,0,0,0.4);
@@ -75,11 +65,10 @@ html, body {
     height: 100%;
     width: 100%;
     z-index: 1;
-    /*This puts our modal in front of the body (which has a default z-index setting of `0`*/
     display: none;
     overflow: auto;
-    /*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
   }
+
   
   #modal-textbox {
     background-color: white;
@@ -87,55 +76,51 @@ html, body {
     width: 750px;
     border-radius: 2px;
     margin: 150px auto;
-    /*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally).*/
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    /*This will give the box some depth.*/
     padding: 2%;
     line-height: 120%;
     font-family: Arial, Helvetica, sans-serif;
     overflow: auto;
-      /*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
   }
   
   #modal-footer {
     text-align: right;
-    /* border: 1px solid black; */
     width: 100px;
     height: 20px;
-    /* background-color: gray; */
+  }
 
+  #openModal {
+    width: auto;
+    position: absolute;
+    top: 700px;
   }
   
-
   .modal-buttons {
     padding: 14px 18px;
-    background-color: #677996;
+    background-color: green;
     border: none;
     outline: none;
     border-radius: 3px;
     color: white;
     font-family: 'Arial';
     cursor: pointer;
-    position: absolute;
-    top: 700px;
-    
+    /* position: absolute;
+    top: 100;
+     */
   }
   .modal-buttons2 {
     padding: 14px 18px;
-    background-color: #677996;
+    background-color: purple;
     border: none;
     outline: none;
     border-radius: 3px;
     color: white;
     font-family: 'Arial';
     cursor: pointer;
-    position: absolute;
-    top: 250px;
-
-    
+    position: relative;
+    top: 100;
+  
   }
-
-
 
   #modal2 {
     background-color: rgba(0,0,0,0.4);
@@ -178,19 +163,33 @@ html, body {
   
 
   .modal-buttons2 {
-    padding: 14px 18px;
-    background-color: #677996;
+    /* padding: 14px 18px; */
+    background-color: red;
     border: none;
     outline: none;
     border-radius: 3px;
     color: white;
     font-family: 'Arial';
-    cursor: pointer;
-    position: absolute;
+    cursor: pointer;    
+    display: inline-block;
+    position: fixed;
     top: 250px;
-    
+    left: 900px
+
+  }
+  #close2 {
+    position: fixed;
+    top: 170px;
+    left: 1250px
+
   }
 
+  #close {
+    position: fixed;
+    top: 170px;
+    left: 1250px
+
+  }
 
   #timer {
     font-family: 'Orbitron', sans-serif;
@@ -201,10 +200,6 @@ html, body {
     font-family: 'Orbitron', sans-serif;
   }
 
-
-
-
-  
   #modal1 {
     background-color: rgba(0,0,0,0.4);
     position: fixed;
@@ -243,7 +238,6 @@ html, body {
 
 
   }
-  
 
   .modal-buttons1 {
     padding: 14px 18px;
@@ -281,11 +275,9 @@ html, body {
       width: auto;
       position: fixed;
       top: 700px;
-
-
       
     }
-
+  
     #modal-textbox1 {
       background-color: white;
       height: 200px;
@@ -302,9 +294,7 @@ html, body {
       margin-top: 50%;
       margin-bottom: 50%;
 
-  
     }
-
 
   .modal-buttons1 {
     /* padding: 14px 18px; */
@@ -326,11 +316,8 @@ html, body {
     height: 100%;
     width: 100%;
     z-index: 1;
-    /*This puts our modal in front of the body (which has a default z-index setting of `0`*/
     display: none;
     overflow: none;
-
-    /*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
   }
 
   #modal-footer1 {
@@ -338,10 +325,6 @@ html, body {
     width: auto;
     height: auto;
     padding: 5%;
-
-
   }
-
-  
 
   }
