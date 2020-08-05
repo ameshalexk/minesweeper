@@ -267,20 +267,29 @@ html, body {
     left: 100px;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 600px), only screen and (max-height: 900px) {
     h1 {
-      font-size: 1%;
+      font-size: 2vw;
+
     }
     body {
       background-color: rebeccapurple;
-      background-image: url(./mine.gif);
-      background-position: top left;
+      background-image: none
+      /* background-position: top left; */
     }
 
     #openModal {
       width: auto;
-      position: fixed;
-      top: 700px;
+      position: absolute;
+      top: 10%
+      
+    }
+
+    #openModal2 {
+      width: auto;
+      display: flex;
+      align-self: right;
+      
       
     }
   

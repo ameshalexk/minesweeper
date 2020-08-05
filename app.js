@@ -35,7 +35,7 @@ let $newH1 = $('<div>')
         let $minePos = $(`#${rand}`).position(); 
         let $mineId = rand;
         arry.push($minePos);
-        $(`#${rand}`).css('background-color', 'red') 
+        // $(`#${rand}`).css('background-color', 'red') 
         $(`#${rand}`).attr('contains', "mine")
         mineSet.add(rand)
       }
@@ -52,7 +52,7 @@ let $newH1 = $('<div>')
   }
   //Checks if game is won and over?
     const gameWon = (e) => {
-      if(counter.length + mineSet.size === 100 || counter.length ===5) {
+      if(counter.length + mineSet.size === 100) {
         alert(`Yayy!! ${$newH1.text()} won Minesweeper! It took you ${time} seconds.`);
         location.reload(true);
         mover(e, $newH1);
