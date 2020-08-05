@@ -3,9 +3,7 @@ const counter = [];
 let time = 1;
 const arry = [];
 let mineSet = new Set()
-let total = 0;
 let $newH1 = $('<div>')
-let players = [];
 
   //render a field of boxes 
   const mineBoard =  () => {
@@ -42,7 +40,7 @@ let players = [];
         mineSet.add(rand)
       }
     }
-    
+    //Checks if box is revealed
     const isBoxRevealed = (e) => {
       if(counter.indexOf(e.currentTarget.id) === -1) {
         counter.push(e.currentTarget.id);
@@ -52,14 +50,12 @@ let players = [];
         return true
     }
   }
+  //Checks if game is won and over?
     const gameWon = (e) => {
       if(counter.length + mineSet.size === 100 || counter.length ===5) {
-        alert(`Yayy!! You you wont Minesweeper! It took you ${time} seconds.`);
+        alert(`Yayy!! ${$newH1.text()} won Minesweeper! It took you ${time} seconds.`);
         location.reload(true);
-        // player1 = new Player('amesh', time)
-        // console.log('lol');
         mover(e, $newH1);
-        // return true
     }
   }
 
@@ -146,7 +142,7 @@ let players = [];
         $rclick.html('🚩')
     }
   }
-
+  //click listener for flag
   $('.box').on('mousedown', flag);
     //Grabbing Elements for Modals
     const $openBtn = $('#openModal'); 
@@ -195,45 +191,50 @@ let players = [];
     $openBtn1.on('click', openModal1); 
     $closeBtn1.on('click', closeModal1); 
     setTimeout(openModal1, 3000); 
-    const data = JSON.parse(localStorage.getItem('playerz'));
-    // const liMaker = (text) => {
-    //   const $li = $('<li>');
-    //   $li.text = text;
-    //   $(`#tdl`).append($li);
-    // }
 
+    //Function to sort localstorage entries (https://medium.com/@gmcharmy/sort-objects-in-javascript-e-c-how-to-get-sorted-values-from-an-object-142a9ae7157c)
+ function sortObjectEntries(obj, n){
+    let sortedList = []
+    //Sorting by values asc
+    sortedList = Object.entries(obj).sort((a,b)=>{
+          if(b[1] < a[1]) return 1;
+          else if(b[1] > a[1]) return -1;
+    //if values are same do edition checking if keys are in the right order
+          else {
+             if(a[0] < b[0]) return 1;
+             else if(a[0] > b[0]) return -1;
+             else return 0
+      }
+     })
+      for (i of sortedList) {
+        let plain = i.shift()
+        const $li = $('<ul>');
+        $li.html(`${plain} `);
+        $(`#tdl`).append($li);
+     }
+      return sortedList.map(el=>el[0]).slice(0,n)
+     }
 
-  for (i = 0; i < localStorage.length; i++)   {
-    const $li = $('<li>');
-    $li.text(localStorage.key(i));
-    $(`#tdl`).append($li);
-    console.log(localStorage.values);
-  }
-
-
-    const createToDo = (event) => {
+     sortObjectEntries(localStorage);
+//Makes a new div for player name entry 
+    const addEntry = (event) => {
       event.preventDefault();
       let $inputValue = $('#input-box').val();
       let $newDiv = $('<div>')
-      let $toDoButton = $('<button>')
       $newH1.text($inputValue)
-      $toDoButton.text('Completed')
-      players.push($inputValue)
       $('#to-do-list').append($newDiv)
       $newH1.addClass('to-do-item')    
       $("#input-box").val("");
       $("#modal1").css('display', 'none'); 
     } 
-
+    //Sets player name in localstorage
     const mover = (event, $move) => {
-      $move.removeClass("to-do-item");
-      $move.attr('class', 'done-item');
       $("#completed").append($move);
-      console.log($move.text());
       $move.html(`${$newH1.text()} took ${time} seconds.`)
       localStorage.setItem($newH1.text(), time)
     }
-    $('#submit').on('click', createToDo);
+    //click listener for player name addition
+    $('#submit').on('click', addEntry);
 
 })
 
