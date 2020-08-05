@@ -267,7 +267,7 @@ html, body {
     left: 100px;
   }
 
-  @media only screen and (max-width: 600px), only screen and (max-height: 900px) {
+  @media only screen and (max-width: 600px), only screen and (max-height: 600px) {
     h1 {
       font-size: 2vw;
 

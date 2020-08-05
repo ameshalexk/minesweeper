@@ -1,9 +1,11 @@
-$(() => {
 const counter = [];
 let time = 1;
 const arry = [];
 let mineSet = new Set()
 let $newH1 = $('<div>')
+
+$(() => {
+
 
   //render a field of boxes 
   const mineBoard =  () => {
