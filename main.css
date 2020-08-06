@@ -1,18 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
-html, body {
-    height: 100%;
-    margin: 0;
-  }
-
-  body {
+body {
     background: #ff8883;
     background-image: url(./mine.gif);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-position: center center;
+    background-image: cover;
+    background-position: center top;
+    height: 100%; 
   }
 
   @keyframes changer{
@@ -32,20 +27,18 @@ html, body {
   h1 {
     font-size: 2vw;
     color: #2c2e7d;
-    position: absolute;
-    top: 0;
+    text-align: center;
     font-family: 'Orbitron', sans-serif;
-
   }
+
   div {
     width: 320px;
     height: 320px;
   }
+
   #game {
-    position: relative;
-    top: 100px;
-    left: 100px;
- 
+    align-self: center;
+    margin-top: 250px;
    }
 
   .box {
@@ -69,7 +62,6 @@ html, body {
     overflow: auto;
   }
 
-  
   #modal-textbox {
     background-color: white;
     height: 350px;
@@ -89,18 +81,6 @@ html, body {
     height: 20px;
   }
 
-  #openModal {
-    width: auto;
-    position: absolute;
-    top: 73%;
-  }
-  
-  #openModal2 {
-    width: auto;
-    position: absolute;
-    top: 27%;
-  }
-
   .modal-buttons {
     padding: 14px 18px;
     background-color: green;
@@ -110,10 +90,12 @@ html, body {
     color: white;
     font-family: 'Arial';
     cursor: pointer;
-    /* position: absolute;
-    top: 100;
-     */
+    width: 200px;
+    align-self: center;
+    margin-top: 70px;
   }
+
+  
   .modal-buttons2 {
     padding: 14px 18px;
     background-color: purple;
@@ -122,26 +104,9 @@ html, body {
     border-radius: 3px;
     color: white;
     font-family: 'Arial';
-    cursor: pointer;
-    /* position: relative;
-    top: 100; */
-  
-  }
-
-  .modal-buttons2 {
-    /* padding: 14px 18px; */
-    /* background-color: red;
-    border: none;
-    outline: none;
-    border-radius: 3px;
-    color: white;
-    font-family: 'Arial';
-    cursor: pointer;    
-    display: inline-block;
-    position: fixed;
-    top: 250px;
-    left: 900px */
-
+    width: 200px;
+    align-self: center;
+    margin-top: -690px;
   }
 
   #modal2 {
@@ -152,10 +117,8 @@ html, body {
     height: 100%;
     width: 100%;
     z-index: 1;
-    /*This puts our modal in front of the body (which has a default z-index setting of `0`*/
     display: none;
     overflow: auto;
-    /*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
   }
   
   #modal-textbox2 {
@@ -164,45 +127,25 @@ html, body {
     width: 750px;
     border-radius: 2px;
     margin: 150px auto;
-    /*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally).*/
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    /*This will give the box some depth.*/
     padding: 2%;
     line-height: 120%;
     font-family: Arial, Helvetica, sans-serif;
     overflow: auto;
-      /*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
   }
   
   #modal-footer2 {
     text-align: right;
-    /* border: 1px solid black; */
     width: 100px;
     height: 20px;
-    /* background-color: gray; */
 
   }
   
-  #close2 {
-    position: fixed;
-    top: 170px;
-    left: 1250px
-
-  }
-
-  #close {
-    position: fixed;
-    top: 170px;
-    left: 1250px
-
-  }
-
   #timer {
     font-family: 'Orbitron', sans-serif;
   }
 
   #clock {
-
     font-family: 'Orbitron', sans-serif;
   }
 
@@ -214,10 +157,8 @@ html, body {
     height: 100%;
     width: 100%;
     z-index: 1;
-    /*This puts our modal in front of the body (which has a default z-index setting of `0`*/
     display: none;
     overflow: auto;
-    /*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
   }
   
   #modal-textbox1 {
@@ -226,14 +167,12 @@ html, body {
     width: 550px;
     border-radius: 100px;
     margin: 150px auto;
-   
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     padding: 5%;
     line-height: 120%;
     font-family: Arial, Helvetica, sans-serif;
     overflow: auto;
     text-align: center;
-
   }
   
   #modal-footer1 {
@@ -241,8 +180,6 @@ html, body {
     width: 500px;
     height: 20px;
     padding: 5%;
-
-
   }
 
   .modal-buttons1 {
@@ -255,91 +192,92 @@ html, body {
     font-family: 'Arial';
     cursor: pointer;
     text-align: center;
-
-    
-  }
-
-
-  #topscorer {
-    font-size: 55px;
-    position: absolute;
-    top: -500px;
-    left: 100px;
   }
 
   @media only screen and (max-width: 600px), only screen and (max-height: 600px) {
     h1 {
-      font-size: 2vw;
-
+      font-size: 3vw;
     }
+
     body {
-      background-color: rebeccapurple;
+      background-color:lightblue;
       background-image: none
-      /* background-position: top left; */
     }
 
-    #openModal {
-      width: auto;
+    #game {
+      align-self: center;
+      margin-top: 50px;
       position: absolute;
-      top: 10%
-      
-    }
-
-    #openModal2 {
-      width: auto;
-      display: flex;
-      align-self: right;
-      
-      
+      top: -50px;
     }
   
     #modal-textbox1 {
       background-color: white;
-      height: 200px;
-      width: 300px;
+      height: auto;
+      width: auto;
       border-radius: 100px;
-      margin: 10px;
+      margin: 150px auto;
       box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-      /* line-height: 120%; */
+      padding: 5%;
+      line-height: 120%;
       font-family: Arial, Helvetica, sans-serif;
+      overflow: auto;
       text-align: center;
-      overflow: none;
-      margin-right: auto;
-      margin-left: auto;
-      margin-top: 50%;
-      margin-bottom: 50%;
-
     }
-
-  .modal-buttons1 {
-    /* padding: 14px 18px; */
-    background-color: #677996;
-    border: none;
-    outline: none;
-    border-radius: 3px;
-    color: white;
-    font-family: 'Arial';
-    cursor: pointer;
-    
-  }
-
-  #modal1 {
+  
+    #modal1 {
     background-color: rgba(0,0,0,0.4);
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
     z-index: 1;
     display: none;
     overflow: none;
-  }
+    }
 
-  #modal-footer1 {
-    text-align: center;
-    width: auto;
+    #modal-textbox2 {
+    background-color:white;
     height: auto;
-    padding: 5%;
-  }
+    width: auto;
+    border-radius: 2px;
+    margin: 150px auto;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 2%;
+    line-height: 120%;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: auto;
+    }
 
+    .modal-buttons {
+      padding: 14px 18px;
+      background-color: green;
+      border: none;
+      outline: none;
+      border-radius: 3px;
+      color: white;
+      font-family: 'Arial';
+      cursor: pointer;
+      width: 200px;
+      align-self: center;
+      margin-top: 90px;
+    }
+  
+    
+    .modal-buttons2 {
+      padding: 14px 18px;
+      background-color: purple;
+      border: none;
+      outline: none;
+      border-radius: 3px;
+      color: white;
+      font-family: 'Arial';
+      width: 200px;
+      align-self: center;
+      margin-top: 70px;
+    }
+    
+    #modal-footer1 {
+      text-align: center;
+      width: auto;
+      height: 20px;
+      padding: 5%;
+    }
+  
   }

@@ -1,12 +1,13 @@
-const counter = [];
-let time = 1;
-const arry = [];
-let mineSet = new Set()
-let $newH1 = $('<div>')
+
 
 $(() => {
-
-
+  const counter = [];
+  let time = 1;
+  const arry = [];
+  let mineSet = new Set()
+  let $newH1 = $('<div>')
+  $newH1.text('You')
+  
   //render a field of boxes 
   const mineBoard =  () => {
  
@@ -155,16 +156,16 @@ $(() => {
     const $closeBtn2 = $('#close2'); 
     //Event Handlers
     const openModal = () => {
-      $modal.css('display', 'block'); 
+      $modal.fadeIn('slow') 
     }
     const closeModal = () => {
-      $modal.css('display', 'none'); 
+      $modal.fadeOut('slow')
     }
     const openModal2 = () => {
-      $modal2.css('display', 'block'); 
+      $modal2.fadeIn('slow')
     }
     const closeModal2 = () => {
-      $modal2.css('display', 'none'); 
+      $modal2.fadeOut('slow')
     }
     
     //Event Listeners
@@ -227,13 +228,16 @@ $(() => {
       $('#to-do-list').append($newDiv)
       $newH1.addClass('to-do-item')    
       $("#input-box").val("");
-      $("#modal1").css('display', 'none'); 
+      $("#modal1").fadeOut('slow')
     } 
     //Sets player name in localstorage
     const mover = (event, $move) => {
       $("#completed").append($move);
+      if ($move.text() !== "You") {
+        console.log($move);
       $move.html(`${$newH1.text()} took ${time} seconds.`)
       localStorage.setItem($newH1.text(), time)
+      }
     }
     //click listener for player name addition
     $('#submit').on('click', addEntry);
