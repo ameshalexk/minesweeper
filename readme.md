@@ -19,7 +19,11 @@ The local storage is used to set the player name and win time as objects. The sa
 
 URL to live site : https://ameshalexk.github.io/minesweeper/
 
-Unsolved Problems : Recursion is missing as I feel the implementation could have been better. Hope to incorporate this feature in future.
+Unsolved Problems detected so far: 
+
+*-* Recursion is missing as I feel the implementation could have been better. Hope to incorporate this feature in future.
+
+*-* The game does not work on first load in any browser. However, on second load everything is fine.   
 
 Instructions for MineSweeper
 Quick Start:
